@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh sadcpoc $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh spectromax $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh think42 $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh trainnry $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh testsadc $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh demo $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh narayanaerptest $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh uatnrymarketing $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh testnrymarketing $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh narayanatraining $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh demodb1 $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh trainhd $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh helpdeskpoc $one
+sh /var/lib/jenkins/DatabaseBackup/Testingbackup.sh helpdesk $one
