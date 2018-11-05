@@ -1,0 +1,19 @@
+command[check_disk_c1]=/usr/lib/nagios/plugins/check_disk -w 20 -c 10 -p /
+command[check_lmtp]=/usr/lib/nagios/plugins/check_smtp -H mail.pappaya.com -p 587
+command[check_clamd]=/usr/lib/nagios/plugins/check_clamd /opt/zimbra/data/clamav/clamav.sock
+command[check_spell]=/usr/lib/nagios/plugins/check_http -H mail.pappaya.com -p 7780
+command[check_dns]=/usr/lib/nagios/plugins/check_dns -H mail.pappaya.com
+command[check_cert]=/usr/lib/nagios/plugins/check_http -S -H mail.dexrasolutions.com -C 1
+command[check_users]=/usr/lib/nagios/plugins/check_users -w 2 -c 3
+command[check_queue]=/usr/local/nagios/libexec/check_postfix_queue -w 20 -c 40
+command[check_backup]=/usr/lib/nagios/plugins/check_disk -w 50 -c 100 -p /home/ubuntu/zimbra_Backup/
+command[check_zimbra_mysql]=/usr/lib/nagios/plugins/check_mysql -s /opt/zimbra/data/tmp/mysql/mysql.sock
+command[notify-service-by-slack]=/usr/local/bin/slack_nagios.pl -field slack_channel=#nagiosnotifications -field HOSTALIAS="$HOSTNAME$" -field SERVICEDESC="$SERVICEDESC$" -field SERVICESTATE="$SERVICESTATE$" -field SERVICEOUTPUT="$SERVICEOUTPUT$" -field NOTIFICATIONTYPE="$NOTIFICATIONTYPE$"
+command[notify-host-by-slack]=/usr/local/bin/slack_nagios.pl -field slack_channel=#nagiosnotifications -field HOSTALIAS="$HOSTNAME$" -field HOSTSTATE="$HOSTSTATE$" -field HOSTOUTPUT="$HOSTOUTPUT$" -field NOTIFICATIONTYPE="$NOTIFICATIONTYPE$"
+#command[slack-msg]=/usr/local/nagios/libexec/slack-msg  "'$HOSTNAME$' '$SERVICEDESC$' '$SERVICESTATE$' '$SERVICEOUTPUT$'" '$SERVICESTATE$'
+#command[check_cpu]=/usr/lib/nagios/plugins/check_procs -w 50 -c 80 -m CPU -t 20
+#command[check_zpt1]=/usr/lib/nagios/plugins/check_mysql -s /opt/zimbra/data/tmp/mysql/mysql.sock -u root -p  9GF3gTob5PKL8pF_tnhAe2RXy9ugbhi
+command[check_mem]=/usr/lib/nagios/plugins/check_mem  -f -w 2 -c 1
+#command[check_cpu]=/usr/lib/nagios/plugins/check_cpu_perf.sh -w 10 -c 20
+command[check_cpu]=/usr/lib/nagios/plugins/check_cpu_stats.sh -w 20 -c 30
+command[check_zimbra_live_sync]=/usr/lib/nagios/plugins/check_zimbra_live_sync -w 1 -c 2
